@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class="loading" wx:if="{{isLoading}}">
+	<image class="loading__icon" src="/assets/images/loading.gif"></image>
+</view>
+<view class="container">
+	<view class="top-swiper">
+		<swiper indicator-dots="{{false}}" autoplay="{{true}}" interval="2000" circular="{{true}}">
+			<block wx:for="{{topImages}}" wx:key="index">
+				<swiper-item>
+					<image mode="scaleToFill" class="swiper-full-img" src="{{item}}"></image>
+				</swiper-item>
+			</block>
+			<swiper-item wx:if="{{topImages.length===0}}">
+				<image mode="scaleToFill" class="swiper-full-img" src="/assets/images/top.jpg"></image>
+			</swiper-item>
+
+		</swiper>
+	</view>
+	<view class="articles">
+		<view class="list">
+			<block wx:for="{{articleList}}" wx:key="index">
+				<view class="note-flow {{item.haveImg ? 'have-img' :''}}" bindtap="toArticleInfoPage"
+					data-articleId="{{item.articleId}}">
+					<view href="/p/3489f933a45c" class="content">
+						<view class="wrap-img" style="width: 80px; height: 80px;" wx:if="{{item.haveImg}}">
+							<image src="{{item.showImg}}" style="width: 80px; height: 80px;"></image>
+						</view>
+						<view class="summary">
+							<text class="title">
+								{{item.title}}
+							</text>
+							<text class="abstract">{{item.abstract}}</text>
+						</view>
+					</view>
+					<view class="meta oneline">
+						<text class="name">{{item.name}}</text> <text class="time">{{item.time}}</text>
+					</view>
+				</view>
+			</block>
+			
+		</view>
+	</view>
+</view>

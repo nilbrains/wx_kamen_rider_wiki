@@ -1,0 +1,20 @@
+
+<view class="container" style='background: -webkit-linear-gradient(top, rgba(32, 156, 221, 1), rgba(32, 156, 221, 0.1));'>
+  <block a:else="{{!remind}}">
+    <image class="title" src="/assets/images/more/title8.png"></image>
+    <view class="content">
+      <view class="hd" style="transform:rotateZ({{angle}}deg);">
+        <open-data class='logo' type="userAvatarUrl"></open-data>
+        <image class="wave" src="/assets/images/more/wave.png" mode="aspectFill"></image>
+        <image class="wave wave-bg" src="/assets/images/more/wave.png" mode="aspectFill"></image>
+      </view>
+      <view class="bd">
+        <!-- <image class="smalltitle" src="/assets/images/more/confirm-word1.png"></image> -->
+        <button type="primary" class="confirm-btn" size='large' style="width: 282rpx;background: rgb(32, 156, 221); border:none;border-radius: 66rpx;color: #fff;" bindtap='goToIndex'>
+          HENSION
+        </button>
+        <text class="copyright">© 2020 Make NilBrains</text>
+      </view>
+    </view>
+  </block>
+</view>

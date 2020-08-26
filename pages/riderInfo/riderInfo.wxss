@@ -1,0 +1,45 @@
+/* pages/riderInfo/riderInfo.wxss */
+.info-header{
+  height: 375rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info-header .info-header-cover{
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: 50vw;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.info-header .meta .name{
+  font-size: 60rpx;
+  color: #fff;
+  font-weight: 700;
+}
+
+
+.box {
+  background: #fff;
+  padding: 10px;
+}
+
+.table{
+  display: flex;
+  flex-direction: column;
+}
+.table .table-row{
+  display: flex;
+  justify-content:space-around;
+}
+.table .table-row text{
+  display: block;
+  width: 100%;
+  padding: 10px;
+}
+.table .table-row .table-row-title{
+  font-weight: 800;
+  flex: 0 1 33%;
+}

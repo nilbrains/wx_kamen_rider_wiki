@@ -1,0 +1,32 @@
+<view class="loading" wx:if="{{isLoading}}">
+  <image class="loading__icon" src="/assets/images/loading.gif"></image>
+</view>
+<view class="container">
+	<view class="info-header">
+		<image src="/assets/images/bg.jpg" class="info-header-cover"></image>
+		<view class="meta">
+			<text class="name">{{contents.name}}</text>
+		</view>
+	</view>
+	<view class="info-content">
+		
+		<view class="box">
+			<text class="title-h1">简介</text>
+			<view class="box-content">
+				{{contents.content}}
+			</view>
+		</view>
+
+    <view class="table">
+			<view class="table-row">
+				<text class="table-row-title">集数</text>
+				<text>{{contents.episode}}</text>
+			</view>
+			<view class="table-row">
+				<text class="table-row-title">播出平台</text>
+				<text>{{contents.platform!=''?contents.platform:'非常抱歉，未找到'}}</text>
+			</view>
+		</view>
+    
+	</view>
+</view>
