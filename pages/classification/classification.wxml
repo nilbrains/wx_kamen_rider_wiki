@@ -7,7 +7,7 @@
 			<view class="tab-content tab-content-{{index}}" slot="tab-content-{{index}}">
 				<view class="rider-content">
 					<block wx:for="{{its}}" wx:for-item="it" wx:key="index">
-						<view class="rider" bindtap="toRiderInfoPage" bindlongpress="showImg" data-ridersrc="{{it.pic}}" data-riderId="{{it.riderId}}">
+						<view class="rider" bindtap="toRiderInfoPage" bindlongpress="showImg" data-ridersrc="{{it.pic}}" data-riderId="{{it.rider_id}}" data-haveinfo="{{it.haveInfo}}">
 							<image src="{{it.pic}}" class="rider-logo"  mode="aspectFill" lazy-load="{{true}}"></image>
 							<text class="rider-name">{{it.name}}</text>
 						</view>

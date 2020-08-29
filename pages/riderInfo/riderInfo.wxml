@@ -5,7 +5,7 @@
 	<view class="info-header">
 		<image src="/assets/images/bg.jpg" class="info-header-cover"></image>
 		<view class="meta">
-			<text class="name">{{contents.name}}</text>
+			<text class="name">{{contents.rider_name}}</text>
 		</view>
 	</view>
 	<view class="info-content">

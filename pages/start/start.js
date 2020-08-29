@@ -7,10 +7,14 @@ Page({
   },
   onLoad() {
     request({
-      url: `${base_url}config.json`,
+      url: `${base_url}/getConfig`,
       "content-type": "application/json"
     }).then(res => {
-      app.globalData.config = res.data
+      let kkk = {}
+      res.data.forEach(item=>{
+          kkk[item.key] = item.value
+      })
+      app.globalData.config = kkk
     })
   },
   onReady() {

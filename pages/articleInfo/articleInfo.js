@@ -1,6 +1,7 @@
 // pages/articleInfo/articleInfo.js
 var app = getApp()
 import {
+  request,
   base_url
 } from "../../utils/api";
 Page({
@@ -28,8 +29,7 @@ Page({
   },
   onLoad: function (options) {
     const _ts = this;
-
-    _ts.getText(`${base_url}md/${options.articleid }.md`, res => {
+    _ts.getText(`${base_url}/showArticle?id=${options.articleid }`, res => {
       let obj = app.towxml(res.data, 'markdown', {
         // theme:'dark',
         events: {

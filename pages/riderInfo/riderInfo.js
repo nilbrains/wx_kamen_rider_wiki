@@ -19,14 +19,21 @@ Page({
   onLoad: function (options) {
     // console.log("info riderid ==> ",options.riderid);
     request({
-      url: `${base_url}info/${options.riderid}.json`,
+      url: `${base_url}/getInfo?id=${options.riderid}`,
       "content-type": "application/json"
     }).then(res => {
-      // console.log("classification == >", res.data);
-      this.setData({
-        contents:res.data,
-        isLoading:false
-      })
+      console.log("classification == >", res.data);
+      if (res.data.err === 0) {
+        this.setData({
+          contents:res.data.data,
+          isLoading:false
+        })
+      } else {
+        wx.showToast({
+          title: res.data.msg,
+          icon:'none',
+        })
+      }
     })
   },
 

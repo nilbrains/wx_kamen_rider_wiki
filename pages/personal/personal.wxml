@@ -10,6 +10,10 @@
 			<open-data class="nickname" type="userNickName"></open-data>
 		</view>
 	</view>
+	<view class="count">
+      <view class="cell">{{pyb}} <text>Py币</text> </view>
+      <view class="cell" bindtap="toSginIn" > {{days}} <text class="sginIn {{isSginIn==true?'on':''}}">{{isSginIn?'已打卡':'打卡'}}</text> </view>
+    </view>
 	<view class="extra">
 		<button open-type="feedback" class="item icon-arrow icon-feedback">
 			意见反馈

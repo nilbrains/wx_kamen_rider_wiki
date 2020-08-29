@@ -1,3 +1,8 @@
+const {
+  request,
+  base_url
+} = require("../../utils/api");
+
 // pages/personal/personal.js
 let app = getApp();
 Page({
@@ -6,61 +11,64 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isLoading:false,
-    version:"v520.13.14"
+    isLoading: false,
+    version: "v520.13.14",
+    isSginIn: false,
+    pyb: 0,
+    days: 0,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let flag = this.isToday(app.globalData.userData.sgin_today);
+    console.log(flag,app.globalData.userData.sgin_today);
+    
     this.setData({
-      version:app.globalData.config.version
+      version: app.globalData.config.version,
+      pyb: app.globalData.userData.pyb,
+      days: app.globalData.userData.days,
+      isSginIn: flag
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  isToday(str) {
+    var d = new Date();
+    var y = d.getFullYear(); // 2014
+    var m = d.getMonth()<10?"0"+(d.getMonth()+1):(d.getMonth()+1)+""; // 7,月份从0开始的，注意
+    var d = d.getDate()<10?"0"+d.getDate():d.getDate()+""; // 9
+    var date_str = y + '-' + m + '-' + d;
+    return str == date_str;
   },
+  toSginIn() {
+    // console.log(app.globalData.userData.id);
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+    if (this.isToday(app.globalData.userData.sgin_today)) {
+      wx.showToast({
+        title: '今天已签到',
+        icon:'none'
+      })
+      return;
+    }
+    request({
+        url: `${base_url}/wechatSginIn`,
+        data: {
+          userid: app.globalData.userData.id
+        }
+      })
+      .then(res => {
+        app.globalData.userData = res.data.data;
+        wx.showToast({
+          title: '签到成功',
+          icon:'none'
+        })
+        this.setData({
+          isSginIn: true,
+          pyb: app.globalData.userData.pyb,
+          days: app.globalData.userData.days,
+        })
+      })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
   /**
    * 用户点击右上角分享
    */

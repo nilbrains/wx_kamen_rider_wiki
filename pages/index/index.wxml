@@ -1,4 +1,5 @@
 <!--index.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
 <view class="loading" wx:if="{{isLoading}}">
 	<image class="loading__icon" src="/assets/images/loading.gif"></image>
 </view>
@@ -20,8 +21,8 @@
 		<view class="list">
 			<block wx:for="{{articleList}}" wx:key="index">
 				<view class="note-flow {{item.haveImg ? 'have-img' :''}}" bindtap="toArticleInfoPage"
-					data-articleId="{{item.articleId}}">
-					<view href="/p/3489f933a45c" class="content">
+					data-articleId="{{item.content_md}}">
+					<view class="content">
 						<view class="wrap-img" style="width: 80px; height: 80px;" wx:if="{{item.haveImg}}">
 							<image src="{{item.showImg}}" style="width: 80px; height: 80px;"></image>
 						</view>
@@ -33,7 +34,7 @@
 						</view>
 					</view>
 					<view class="meta oneline">
-						<text class="name">{{item.name}}</text> <text class="time">{{item.time}}</text>
+						<text class="name">{{item.name}}</text> <text class="time">{{filter.dateFormatStr(item.time)}}</text>
 					</view>
 				</view>
 			</block>

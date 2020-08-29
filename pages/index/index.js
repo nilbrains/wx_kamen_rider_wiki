@@ -13,27 +13,16 @@ Page({
   },
   onLoad: function () {
     request({
-        url: base_url + "index.json",
+        url: base_url + "/artList",
         "content-type": "application/json"
       })
       .then(res => {
-        // console.log("articleList==>", res.data);
+        console.log("articleList==>", res.data);
         if (res.data instanceof Array) {
           this.setData({
             articleList: res.data,
-            isLoading: false
-          })
-        }
-      })
-    request({
-        url: base_url + "topimage.json",
-        "content-type": "application/json"
-      })
-      .then(res => {
-        // console.log("topImages==>", res.data);
-        if (res.data instanceof Array) {
-          this.setData({
-            topImages: res.data
+            isLoading: false,
+            topImages: JSON.parse(app.globalData.config.topPic)
           })
         }
       })

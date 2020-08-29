@@ -24,7 +24,7 @@ Page({
   onLoad() {
     let that = this;
     request({
-      url: base_url + "classification.json",
+      url: base_url + "/classList",
       "content-type": "application/json"
     }).then(res => {
       console.log("classification == >", res.data);
@@ -61,8 +61,11 @@ Page({
   },
   toRiderInfoPage(e) {
     let riderId = e.currentTarget.dataset.riderid;
-    // console.log("riderid == >", riderId);
-    if (riderId === undefined) {
+    let haveInfo = e.currentTarget.dataset.haveinfo;
+    console.log("riderid == >", riderId);
+    console.log("haveInfo == >", haveInfo);
+
+    if (haveInfo === 0) {
       wx.showModal({
         title: '提示',
         content: '非常抱歉暂时没有相关内容\n欢迎提交内容',

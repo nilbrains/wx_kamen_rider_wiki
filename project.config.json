@@ -12,7 +12,7 @@
     "minified": true,
     "newFeature": true,
     "coverView": true,
-    "nodeModules": false,
+    "nodeModules": true,
     "autoAudits": false,
     "showShadowRootInWxmlPanel": true,
     "scopeDataCheck": false,
@@ -83,9 +83,10 @@
           "scene": null
         },
         {
-          "id": -1,
+          "id": 2,
           "name": "pages/riderInfo/riderInfo",
           "pathName": "pages/riderInfo/riderInfo",
+          "query": "riderid=289654334372",
           "scene": null
         }
       ]

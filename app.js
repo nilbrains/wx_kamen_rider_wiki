@@ -1,12 +1,25 @@
+import { request,base_url } from "./utils/api";
 App({
   towxml:require('/towxml/index'),
 
   onLaunch: function () {
-
+    let that = this;
     // 登录
     wx.login({
       success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        request({url:`${base_url}/wechatLogin`,data:{code:res.code}})
+        .then(res=>{
+          console.log(res.data);
+          if (res.data.err == 0) {
+            that.globalData.userData = res.data.data;
+          } else {
+            wx.showModal({
+              title:'提示',
+              content:res.data.msg,
+              showCancel:false
+            })
+          }
+        })
       }
     })
     // 获取用户信息
@@ -17,7 +30,7 @@ App({
           wx.getUserInfo({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
+              this.globalData.userInfo = res.userInfo;
 
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
@@ -32,6 +45,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    config:{}
+    config:{},
+    userData:{}
   }
 })

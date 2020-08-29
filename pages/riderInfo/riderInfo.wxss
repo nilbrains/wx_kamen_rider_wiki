@@ -29,6 +29,7 @@
 .table{
   display: flex;
   flex-direction: column;
+  padding: .5rem;
 }
 .table .table-row{
   display: flex;
@@ -42,4 +43,6 @@
 .table .table-row .table-row-title{
   font-weight: 800;
   flex: 0 1 33%;
+  border-left: #209cdd 2px solid;
+  padding-left: .5rem;
 }
