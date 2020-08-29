@@ -22,7 +22,7 @@ Page({
       url: `${base_url}/getInfo?id=${options.riderid}`,
       "content-type": "application/json"
     }).then(res => {
-      console.log("classification == >", res.data);
+      // console.log("classification == >", res.data);
       if (res.data.err === 0) {
         this.setData({
           contents:res.data.data,

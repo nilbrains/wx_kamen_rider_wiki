@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "mp-tabs": "../../components/tabs/index",
-    "EmptyView" : "../../components/empty/empty"
+    "van-empty" : "../../components/vant/empty/index",
+    "van-tabs": "../../components/vant/tabs/index",
+    "van-tab": "../../components/vant/tab/index"
   }
 }

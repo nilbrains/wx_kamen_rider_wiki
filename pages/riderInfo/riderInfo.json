@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "van-divider":"/components/vant/divider/index",
+    "van-panel":"/components/vant/panel/index"
+  }
 }

@@ -1,20 +1,19 @@
 <view class="loading" wx:if="{{isLoading}}">
-  <image class="loading__icon" src="/assets/images/loading.gif"></image>
+	<image class="loading__icon" src="/assets/images/loading.gif"></image>
 </view>
 <view class="container">
-	<mp-tabs tabs="{{tabs}}" swiperStyle="height:{{tabSwiperHeight}}px" activeTab="{{activeTab}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabCLick" bindchange="onChange" activeClass="tab-bar-title__selected">
-		<block wx:for="{{contents}}" wx:for-item="its" wx:key="index">
-			<view class="tab-content tab-content-{{index}}" slot="tab-content-{{index}}">
-				<view class="rider-content">
-					<block wx:for="{{its}}" wx:for-item="it" wx:key="index">
-						<view class="rider" bindtap="toRiderInfoPage" bindlongpress="showImg" data-ridersrc="{{it.pic}}" data-riderId="{{it.rider_id}}" data-haveinfo="{{it.haveInfo}}">
-							<image src="{{it.pic}}" class="rider-logo"  mode="aspectFill" lazy-load="{{true}}"></image>
-							<text class="rider-name">{{it.name}}</text>
-						</view>
-					</block>
-					<EmptyView wx:if="{{its.length===0}}" info="内容为空" style="margin-left:-6vw;"></EmptyView>
-				</view>
+	<van-tabs active="{{activeTab}}" animated bind:change="onChange" sticky="{{true}}">
+		<van-tab wx:for="{{tabs}}" wx:key="index" title="{{item.title}}" style="height:{{tabSwiperHeight}}px">
+			<view class="rider-content tab-content-{{index}}">
+				<block wx:for="{{contents[index]}}" wx:for-item="it" wx:key="index">
+					<view class="rider" bindtap="toRiderInfoPage" bindlongpress="showImg" data-ridersrc="{{it.pic}}"
+						data-riderId="{{it.rider_id}}" data-haveinfo="{{it.haveInfo}}">
+						<image src="{{it.pic}}" class="rider-logo" mode="aspectFill" lazy-load="{{true}}"></image>
+						<text class="rider-name">{{it.name}}</text>
+					</view>
+				</block>
 			</view>
-		</block>
-	</mp-tabs>
+			<van-empty wx:if="{{contents[index].length===0}}" description="内容为空"></van-empty>
+		</van-tab>
+	</van-tabs>
 </view>

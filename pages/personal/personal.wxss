@@ -94,17 +94,6 @@
   border-radius: 0;
 }
 
-.extra .icon-arrow {
-  position: relative;
-}
-
-.extra .icon-arrow::before {
-  position: absolute;
-  top: 50%;
-  right: 20rpx;
-  transform: translateY(-50%);
-}
-
 .footer {
   font-size: 28rpx;
   color: #999;

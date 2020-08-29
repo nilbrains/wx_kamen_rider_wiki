@@ -9,7 +9,7 @@ App({
       success: res => {
         request({url:`${base_url}/wechatLogin`,data:{code:res.code}})
         .then(res=>{
-          console.log(res.data);
+          // console.log(res.data);
           if (res.data.err == 0) {
             that.globalData.userData = res.data.data;
           } else {

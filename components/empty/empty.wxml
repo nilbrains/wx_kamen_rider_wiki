@@ -1,7 +1,0 @@
-<view class="empty-content">
-       <image src='{{emptyImage}}' mode="widthFix" />
-       <view wx:if="{{showInfo}}" class="info text-lg text-default">{{info}}</view>
-      <view wx:if="{{showButton}}" class="empty-btn">
-            {{buttonTitle}}
-     </view>
-</view>

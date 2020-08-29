@@ -1,5 +1,5 @@
 <view class="loading" wx:if="{{isLoading}}">
-  <image class="loading__icon" src="/assets/images/loading.gif"></image>
+	<image class="loading__icon" src="/assets/images/loading.gif"></image>
 </view>
 <view class="container">
 	<view class="info-header">
@@ -9,15 +9,17 @@
 		</view>
 	</view>
 	<view class="info-content">
-		
-		<view class="box">
-			<text class="title-h1">简介</text>
-			<view class="box-content">
-				{{contents.content}}
+		<van-divider contentPosition="center" textColor="#ccc" borderColor="#ccc">开始介绍</van-divider>
+		<van-panel title="{{contents.rider_name}}" desc="简单剧情" status="*****">
+			<view class="box">
+				<view class="box-content">
+					{{contents.content}}
+				</view>
 			</view>
-		</view>
+		</van-panel>
 
-    <view class="table">
+		<van-divider contentPosition="center" textColor="#ccc" borderColor="#ccc">显而易见</van-divider>
+		<view class="table">
 			<view class="table-row">
 				<text class="table-row-title">集数</text>
 				<text>{{contents.episode}}</text>
@@ -26,7 +28,10 @@
 				<text class="table-row-title">播出平台</text>
 				<text>{{contents.platform!=''?contents.platform:'非常抱歉，未找到'}}</text>
 			</view>
+			<view class="table-row">
+				<text class="table-row-title">播出地址</text>
+				<text>{{contents.platform_link!=''?contents.platform_link:'非常抱歉，还没有'}}</text>
+			</view>
 		</view>
-    
 	</view>
 </view>

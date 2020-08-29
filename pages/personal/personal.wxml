@@ -11,14 +11,14 @@
 		</view>
 	</view>
 	<view class="count">
-      <view class="cell">{{pyb}} <text>Py币</text> </view>
-      <view class="cell" bindtap="toSginIn" > {{days}} <text class="sginIn {{isSginIn==true?'on':''}}">{{isSginIn?'已打卡':'打卡'}}</text> </view>
-    </view>
+		<view class="cell">{{pyb}} <text>Py币</text> </view>
+		<view class="cell" bindtap="toSginIn"> {{days}} <text
+				class="sginIn {{isSginIn==true?'on':''}}">{{isSginIn?'已打卡':'打卡'}}</text> </view>
+	</view>
 	<view class="extra">
-		<button open-type="feedback" class="item icon-arrow icon-feedback">
-			意见反馈
-		</button>
-		<button open-type="contact" class="item icon-arrow">联系客服</button>
+		<van-cell-group title="反馈">
+			<button open-type="contact" class="item">联系我</button>
+		</van-cell-group>
 	</view>
 	<view class="footer">
 		<text>版本 {{version}}</text>

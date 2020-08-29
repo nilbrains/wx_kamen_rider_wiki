@@ -27,7 +27,7 @@ Page({
       url: base_url + "/classList",
       "content-type": "application/json"
     }).then(res => {
-      console.log("classification == >", res.data);
+      // console.log("classification == >", res.data);
       this.setData({
         tabs: res.data.tabs,
         contents: res.data.contents,
@@ -50,6 +50,7 @@ Page({
       activeTab: index
     })
     this.tabsSwiperHeight();
+    
   },
   showImg(e){
     let curCon = this.data.contents[this.data.activeTab];
@@ -62,8 +63,8 @@ Page({
   toRiderInfoPage(e) {
     let riderId = e.currentTarget.dataset.riderid;
     let haveInfo = e.currentTarget.dataset.haveinfo;
-    console.log("riderid == >", riderId);
-    console.log("haveInfo == >", haveInfo);
+    // console.log("riderid == >", riderId);
+    // console.log("haveInfo == >", haveInfo);
 
     if (haveInfo === 0) {
       wx.showModal({

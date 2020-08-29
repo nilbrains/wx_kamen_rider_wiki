@@ -17,6 +17,7 @@
 
 		</swiper>
 	</view>
+	<van-notice-bar wx:if="{{notice!=''}}" scrollable mode="closeable" left-icon="volume-o" text="{{notice}}" />
 	<view class="articles">
 		<view class="list">
 			<block wx:for="{{articleList}}" wx:key="index">
@@ -38,7 +39,6 @@
 					</view>
 				</view>
 			</block>
-			
 		</view>
 	</view>
 </view>

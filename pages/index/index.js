@@ -9,7 +9,8 @@ Page({
   data: {
     articleList: [],
     isLoading: true,
-    topImages: []
+    topImages: [],
+    notice:''
   },
   onLoad: function () {
     request({
@@ -17,12 +18,13 @@ Page({
         "content-type": "application/json"
       })
       .then(res => {
-        console.log("articleList==>", res.data);
+        // console.log("articleList==>", res.data);
         if (res.data instanceof Array) {
           this.setData({
             articleList: res.data,
             isLoading: false,
-            topImages: JSON.parse(app.globalData.config.topPic)
+            topImages: JSON.parse(app.globalData.config.topPic),
+            notice: app.globalData.config.notice,
           })
         }
       })
