@@ -1,6 +1,6 @@
 // export const base_url = "https://nilbrains.utools.club/"
 // export const base_url = "https://jmqs.nilbrains.com/"
-export const base_url = "https://jmqs.nilbrains.com/index/index"
+export const base_url = "http://test1.nilbrains.com/index/index"
 export const request = (params) => {
   return new Promise((resolve, reject) => {
     wx.request({

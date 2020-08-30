@@ -2,7 +2,7 @@ const {
   request,
   base_url
 } = require("../../utils/api");
-
+import Notify from '../../components/vant/notify/notify';
 // pages/personal/personal.js
 let app = getApp();
 Page({
@@ -16,6 +16,7 @@ Page({
     isSginIn: false,
     pyb: 0,
     days: 0,
+    flagCache:0
   },
 
   /**
@@ -68,6 +69,31 @@ Page({
           days: app.globalData.userData.days,
         })
       })
+  },
+  clearCache(){
+    let flag = this.data.flagCache;
+    console.log(flag);
+
+    if (flag<1) {
+      flag ++;
+      Notify({ type: 'warning', message: '确定清空分类缓存吗 \n 那么再点一次' ,duration:1000 })
+    }else{
+      flag = 0;
+      wx.showLoading({
+        title: '清除中....',
+      })
+      setTimeout(() => {
+        wx.setStorageSync('classification',"");
+        wx.hideLoading({
+          success: (res) => {
+            Notify({ type: 'primary', message: '清空分类缓存成功\n请重新进入小程序' })
+          },
+        })
+      }, 1500);
+    }
+    this.setData({
+      flagCache:flag
+    })
   },
   /**
    * 用户点击右上角分享

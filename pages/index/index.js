@@ -19,12 +19,20 @@ Page({
       })
       .then(res => {
         // console.log("articleList==>", res.data);
+        let topImages = [];
+        if (app.globalData.config.topPic != "") {
+          try {
+            topImages = JSON.parse(app.globalData.config.topPic);
+          } catch (error) {
+            topImages = [];
+          }
+        }
         if (res.data instanceof Array) {
           this.setData({
             articleList: res.data,
             isLoading: false,
-            topImages: JSON.parse(app.globalData.config.topPic),
-            notice: app.globalData.config.notice,
+            topImages:topImages,
+            notice: app.globalData.config.notice|"",
           })
         }
       })

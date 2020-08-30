@@ -3,12 +3,15 @@
 </view>
 <view class="container">
 	<van-tabs active="{{activeTab}}" animated bind:change="onChange" sticky="{{true}}">
-		<van-tab wx:for="{{tabs}}" wx:key="index" title="{{item.title}}" style="height:{{tabSwiperHeight}}px">
+		<van-tab wx:for="{{tabs}}" wx:key="index" title="{{item.title}}" color="#209cdd" style="height:{{tabSwiperHeight}}px">
 			<view class="rider-content tab-content-{{index}}">
 				<block wx:for="{{contents[index]}}" wx:for-item="it" wx:key="index">
 					<view class="rider" bindtap="toRiderInfoPage" bindlongpress="showImg" data-ridersrc="{{it.pic}}"
 						data-riderId="{{it.rider_id}}" data-haveinfo="{{it.haveInfo}}">
-						<image src="{{it.pic}}" class="rider-logo" mode="aspectFill" lazy-load="{{true}}"></image>
+						<van-image custom-class="rider-logo" src="{{it.pic}}" fit="contain" lazy-load use-loading-slot use-error-slot>
+							<van-loading slot="loading" type="spinner" size="20" vertical />
+							<text slot="error">图片失踪了</text>
+						</van-image>
 						<text class="rider-name">{{it.name}}</text>
 					</view>
 				</block>

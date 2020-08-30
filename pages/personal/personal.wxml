@@ -16,6 +16,9 @@
 				class="sginIn {{isSginIn==true?'on':''}}">{{isSginIn?'已打卡':'打卡'}}</text> </view>
 	</view>
 	<view class="extra">
+		<van-cell-group title="设置">
+			<van-cell title="分类缓存" icon="replay" is-link value="点我清空" bind:click="clearCache"/>
+		</van-cell-group>
 		<van-cell-group title="反馈">
 			<button open-type="contact" class="item">联系我</button>
 		</van-cell-group>
@@ -24,3 +27,4 @@
 		<text>版本 {{version}}</text>
 	</view>
 </view>
+<van-notify id="van-notify" />

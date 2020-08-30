@@ -2,6 +2,8 @@
   "usingComponents": {
     "van-empty" : "../../components/vant/empty/index",
     "van-tabs": "../../components/vant/tabs/index",
-    "van-tab": "../../components/vant/tab/index"
+    "van-tab": "../../components/vant/tab/index",
+    "van-image": "../../components/vant/image/index",
+    "van-loading": "../../components/vant/loading/index"
   }
 }

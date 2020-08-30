@@ -23,11 +23,35 @@ Page({
   },
   onLoad() {
     let that = this;
+
+    const clazzinfo = wx.getStorageSync('classification');
+
+    // console.log(!clazzinfo);
+    
+    if (!clazzinfo) {
+      that.getClazzInfo();
+    }else{
+      // console.log(Date.now(),clazzinfo.time,Date.now()-clazzinfo.time , Date.now()-clazzinfo.time > 1000*60*60)
+      if (Date.now()-clazzinfo.time > 1000*60*60) {
+        that.getClazzInfo();
+      }else{
+        this.setData({
+          tabs: clazzinfo.data.tabs,
+          contents: clazzinfo.data.contents,
+          isLoading: false
+        })
+        that.tabsSwiperHeight();
+      }
+    }
+
+  },
+  getClazzInfo(){
     request({
       url: base_url + "/classList",
       "content-type": "application/json"
     }).then(res => {
       // console.log("classification == >", res.data);
+      wx.setStorageSync('classification', {time:Date.now(),data:res.data})
       this.setData({
         tabs: res.data.tabs,
         contents: res.data.contents,
@@ -36,7 +60,6 @@ Page({
       this.tabsSwiperHeight();
     })
   },
-
   onTabCLick(e) {
     const index = e.detail.index
     this.setData({
@@ -64,9 +87,11 @@ Page({
     let riderId = e.currentTarget.dataset.riderid;
     let haveInfo = e.currentTarget.dataset.haveinfo;
     // console.log("riderid == >", riderId);
-    // console.log("haveInfo == >", haveInfo);
+    console.log("haveInfo == >", haveInfo);
 
-    if (haveInfo === 0) {
+    if (haveInfo === "0"||haveInfo === 0) {
+      console.log(12313213);
+      
       wx.showModal({
         title: '提示',
         content: '非常抱歉暂时没有相关内容\n欢迎提交内容',
