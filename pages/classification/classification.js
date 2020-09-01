@@ -2,13 +2,17 @@ import {
   request,
   base_url
 } from "../../utils/api";
+import {
+  history
+} from "../../utils/history";
 Page({
   data: {
     tabs: [],
     contents: [],
     activeTab: 0,
     isLoading: true,
-    tabSwiperHeight: 0
+    tabSwiperHeight: 0,
+    show:false
   },
   tabsSwiperHeight() {
     // tab 组件内的swiper高度自适应问题
@@ -27,14 +31,14 @@ Page({
     const clazzinfo = wx.getStorageSync('classification');
 
     // console.log(!clazzinfo);
-    
+
     if (!clazzinfo) {
       that.getClazzInfo();
-    }else{
+    } else {
       // console.log(Date.now(),clazzinfo.time,Date.now()-clazzinfo.time , Date.now()-clazzinfo.time > 1000*60*60)
-      if (Date.now()-clazzinfo.time > 1000*60*60) {
+      if (Date.now() - clazzinfo.time > 1000 * 60 * 60) {
         that.getClazzInfo();
-      }else{
+      } else {
         this.setData({
           tabs: clazzinfo.data.tabs,
           contents: clazzinfo.data.contents,
@@ -45,20 +49,17 @@ Page({
     }
 
   },
-  getClazzInfo(){
-    request({
-      url: base_url + "/classList",
-      "content-type": "application/json"
-    }).then(res => {
-      // console.log("classification == >", res.data);
-      wx.setStorageSync('classification', {time:Date.now(),data:res.data})
-      this.setData({
-        tabs: res.data.tabs,
-        contents: res.data.contents,
-        isLoading: false
-      })
-      this.tabsSwiperHeight();
+  getClazzInfo() {
+    wx.setStorageSync('classification', {
+      time: Date.now(),
+      data: history
     })
+    this.setData({
+      tabs: history.tabs,
+      contents: history.contents,
+      isLoading: false
+    })
+    this.tabsSwiperHeight();
   },
   onTabCLick(e) {
     const index = e.detail.index
@@ -72,16 +73,16 @@ Page({
     this.setData({
       activeTab: index
     })
-    this.tabsSwiperHeight();
     
-  },
-  showImg(e){
-    let curCon = this.data.contents[this.data.activeTab];
-    let imgs = curCon.map(item=>item.pic);
-    wx.previewImage({
-      current:e.currentTarget.dataset.ridersrc,
-      urls: imgs,
-    })
+    this.tabsSwiperHeight();
+    setTimeout(()=>{
+      if (wx.pageScrollTo) {
+        wx.pageScrollTo({
+          scrollTop: 0
+        })
+      }
+    },300)
+
   },
   toRiderInfoPage(e) {
     let riderId = e.currentTarget.dataset.riderid;
@@ -89,9 +90,9 @@ Page({
     // console.log("riderid == >", riderId);
     console.log("haveInfo == >", haveInfo);
 
-    if (haveInfo === "0"||haveInfo === 0) {
+    if (haveInfo === "0" || haveInfo === 0) {
       console.log(12313213);
-      
+
       wx.showModal({
         title: '提示',
         content: '非常抱歉暂时没有相关内容\n欢迎提交内容',

@@ -6,17 +6,22 @@
 		<van-tab wx:for="{{tabs}}" wx:key="index" title="{{item.title}}" color="#209cdd" style="height:{{tabSwiperHeight}}px">
 			<view class="rider-content tab-content-{{index}}">
 				<block wx:for="{{contents[index]}}" wx:for-item="it" wx:key="index">
-					<view class="rider" bindtap="toRiderInfoPage" bindlongpress="showImg" data-ridersrc="{{it.pic}}"
-						data-riderId="{{it.rider_id}}" data-haveinfo="{{it.haveInfo}}">
-						<van-image custom-class="rider-logo" src="{{it.pic}}" fit="contain" lazy-load use-loading-slot use-error-slot>
+
+					<view class="rider" bindtap="toRiderInfoPage" data-riderId="{{it.rider_id}}" data-haveinfo="{{it.haveInfo}}">
+						<van-image round custom-class="rider-logo" src="{{it.pic}}" fit="contain" lazy-load use-loading-slot use-error-slot>
 							<van-loading slot="loading" type="spinner" size="20" vertical />
 							<text slot="error">图片失踪了</text>
 						</van-image>
-						<text class="rider-name">{{it.name}}</text>
+						<view class="rider-con">
+							<view class="rider-name">{{it.name}}</view>
+							<view class="rider-years">{{it.years}}</view>
+							<van-icon a:if="{{it.ttl!=''}}" custom-class="rider-ttl__mini" name="{{it.ttl}}" />
+						</view>
+						<van-icon a:if="{{it.emb!=''}}" custom-class="rider-icon__mini" name="{{it.emb}}" />
 					</view>
+
 				</block>
 			</view>
-			<van-empty wx:if="{{contents[index].length===0}}" description="内容为空"></van-empty>
 		</van-tab>
 	</van-tabs>
 </view>

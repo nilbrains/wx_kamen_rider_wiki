@@ -1,7 +1,6 @@
 import { request,base_url } from "./utils/api";
 App({
   towxml:require('/towxml/index'),
-
   onLaunch: function () {
     let that = this;
     // 登录

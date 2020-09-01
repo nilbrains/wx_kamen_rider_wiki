@@ -32,7 +32,7 @@ Page({
             articleList: res.data,
             isLoading: false,
             topImages:topImages,
-            notice: app.globalData.config.notice|"",
+            notice: app.globalData.config.notice,
           })
         }
       })
