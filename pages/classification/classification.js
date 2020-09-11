@@ -12,7 +12,7 @@ Page({
     activeTab: 0,
     isLoading: true,
     tabSwiperHeight: 0,
-    show:false
+    show:false,
   },
   tabsSwiperHeight() {
     // tab 组件内的swiper高度自适应问题
@@ -103,6 +103,11 @@ Page({
         url: `/pages/riderInfo/riderInfo?riderid=${riderId}`,
       })
     }
+  },
+  toCenter(){
+    wx.navigateTo({
+      url: '/pages/personal/personal',
+    })
   },
   onShareAppMessage: function () {
 

@@ -1,14 +1,17 @@
 <view class="loading" wx:if="{{isLoading}}">
 	<image class="loading__icon" src="/assets/images/loading.gif"></image>
 </view>
+
 <view class="container">
 	<van-tabs active="{{activeTab}}" animated bind:change="onChange" sticky="{{true}}">
-		<van-tab wx:for="{{tabs}}" wx:key="index" title="{{item.title}}" color="#209cdd" style="height:{{tabSwiperHeight}}px">
+		<van-tab wx:for="{{tabs}}" wx:key="index" title="{{item.title}}" color="#209cdd"
+			style="height:{{tabSwiperHeight}}px">
 			<view class="rider-content tab-content-{{index}}">
 				<block wx:for="{{contents[index]}}" wx:for-item="it" wx:key="index">
 
 					<view class="rider" bindtap="toRiderInfoPage" data-riderId="{{it.rider_id}}" data-haveinfo="{{it.haveInfo}}">
-						<van-image round custom-class="rider-logo" src="{{it.pic}}" fit="contain" lazy-load use-loading-slot use-error-slot>
+						<van-image round custom-class="rider-logo" src="{{it.pic}}" fit="contain" lazy-load use-loading-slot
+							use-error-slot>
 							<van-loading slot="loading" type="spinner" size="20" vertical />
 							<text slot="error">图片失踪了</text>
 						</van-image>
@@ -19,9 +22,11 @@
 						</view>
 						<van-icon a:if="{{it.emb!=''}}" custom-class="rider-icon__mini" name="{{it.emb}}" />
 					</view>
-
 				</block>
 			</view>
 		</van-tab>
 	</van-tabs>
+	<view class="nav" bindtap="toCenter">
+		<open-data class="nav-avatar" type="userAvatarUrl"></open-data>
+	</view>
 </view>

@@ -16,11 +16,11 @@ export const history = {
     [{
         "rider_id": "287470383365",
         "name": "Saber",
-        "pic": "https://file.nilbrains.com/pic/saber.jpg",
-        "ttl": "",
+        "pic": "https://jmqs.nilbrains.com/j/t/thumbnail_saber.png",
+        "ttl": "https://jmqs.nilbrains.com/j/l/ttl_saber.png",
         "emb": "",
         "haveInfo": "1",
-        "years": "2020"
+        "years": "2020.9.6"
       },
       {
         "rider_id": "287688484088",

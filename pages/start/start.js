@@ -1,21 +1,10 @@
 
-import { request,base_url } from "../../utils/api";
 let app = getApp();
 Page({
   data: {
     angle: 0,
   },
   onLoad() {
-    request({
-      url: `${base_url}/getConfig`,
-      "content-type": "application/json"
-    }).then(res => {
-      let kkk = {}
-      res.data.forEach(item=>{
-          kkk[item.key] = item.value
-      })
-      app.globalData.config = kkk
-    })
   },
   onReady() {
     var that = this;
@@ -36,8 +25,8 @@ Page({
     });
   },
   goToIndex() {
-    wx.switchTab({
-      url: '/pages/index/index',
+    wx.navigateTo({
+      url: '/pages/classification/classification',
     })
   },
   onShareAppMessage: function () {

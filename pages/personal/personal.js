@@ -12,7 +12,7 @@ Page({
    */
   data: {
     isLoading: false,
-    version: "v520.13.14",
+    version: "V1.2.3",
     isSginIn: false,
     pyb: 0,
     days: 0,
@@ -27,7 +27,6 @@ Page({
     console.log(flag,app.globalData.userData.sgin_today);
     
     this.setData({
-      version: app.globalData.config.version,
       pyb: app.globalData.userData.pyb,
       days: app.globalData.userData.days,
       isSginIn: flag

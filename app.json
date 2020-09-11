@@ -1,11 +1,9 @@
 {
   "pages": [
     "pages/start/start",
-    "pages/index/index",
     "pages/classification/classification",
     "pages/personal/personal",
-    "pages/riderInfo/riderInfo",
-    "pages/articleInfo/articleInfo"
+    "pages/riderInfo/riderInfo"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -13,30 +11,6 @@
     "navigationBarTitleText": "假面骑士Wiki",
     "navigationBarTextStyle": "white",
     "backgroundColor":"#f2f2fa"
-  },
-  "tabBar": {
-    "color": "#e1e1e1",
-    "selectedColor": "#1296db",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "iconPath": "/assets/images/icon/home-default.png",
-        "selectedIconPath": "/assets/images/icon/home-press.png",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/classification/classification",
-        "iconPath": "/assets/images/icon/classification-default.png",
-        "selectedIconPath": "/assets/images/icon/classification-press.png",
-        "text": "分类"
-      },
-      {
-        "pagePath": "pages/personal/personal",
-        "iconPath": "/assets/images/icon/user-default.png",
-        "selectedIconPath": "/assets/images/icon/user-press.png",
-        "text": "我的"
-      }
-    ]
   },
   "sitemapLocation": "sitemap.json"
 }
