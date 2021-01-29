@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "van-divider":"/components/vant/divider/index",
-    "van-panel":"/components/vant/panel/index"
+    "van-panel":"/components/vant/panel/index",
+    "van-button":"/components/vant/button/index"
   }
 }

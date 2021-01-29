@@ -86,23 +86,32 @@ Page({
   },
   toRiderInfoPage(e) {
     let riderId = e.currentTarget.dataset.riderid;
-    let haveInfo = e.currentTarget.dataset.haveinfo;
-    // console.log("riderid == >", riderId);
-    console.log("haveInfo == >", haveInfo);
-
-    if (haveInfo === "0" || haveInfo === 0) {
-      console.log(12313213);
-
-      wx.showModal({
-        title: '提示',
-        content: '非常抱歉暂时没有相关内容\n欢迎提交内容',
-        showCancel: false
-      })
-    } else {
-      wx.navigateTo({
-        url: `/pages/riderInfo/riderInfo?riderid=${riderId}`,
-      })
-    }
+    let name = e.currentTarget.dataset.name;
+    request({
+      url: `${base_url}/haveInfo?id=${riderId}`,
+      "content-type": "application/json",
+    }).then(res => {
+      console.log(res.data);
+      if (res.data.err === "0" || res.data.err === 0) {
+        wx.navigateTo({
+          url: `/pages/riderInfo/riderInfo?riderid=${riderId}`,
+        })
+      } else {
+        wx.showModal({
+          title: '提示',
+          content: '非常抱歉暂时没有相关内容\n是否创建内容',
+          success (res) {
+            if (res.confirm) {
+              wx.navigateTo({
+                url: `/pages/riderChange/riderChange?m=add&riderid=${riderId}&name=${name}`,
+              })
+            } else if (res.cancel) {
+              console.log('用户点击取消')
+            }
+          }
+        })
+      }
+    })
   },
   toCenter(){
     wx.navigateTo({

@@ -10,13 +10,12 @@
 	</view>
 	<view class="info-content">
 		<van-divider contentPosition="center" textColor="#ccc" borderColor="#ccc">开始介绍</van-divider>
-		<van-panel title="{{contents.rider_name}}" desc="简单剧情" status="*****">
-			<view class="box">
-				<view class="box-content">
-					{{contents.content}}
-				</view>
+		
+		<view class="box">
+			<view class="box-content">
+				{{contents.content}}
 			</view>
-		</van-panel>
+		</view>
 
 		<van-divider contentPosition="center" textColor="#ccc" borderColor="#ccc">显而易见</van-divider>
 		<view class="table">
@@ -33,5 +32,11 @@
 				<text>{{contents.platform_link!=''?contents.platform_link:'非常抱歉，还没有'}}</text>
 			</view>
 		</view>
+
+		<view class="ad">
+			<ad unit-id="adunit-2826823ace7dc28d" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"></ad>
+		</view>
+		
+		<van-button type="primary" block bindtap="toChangePage">我要编辑</van-button>
 	</view>
 </view>

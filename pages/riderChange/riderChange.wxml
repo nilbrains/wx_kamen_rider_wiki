@@ -1,0 +1,23 @@
+<view class="container">
+
+  <van-cell-group>
+    <van-field value="{{ riderInfo.rider_name }}" label="Ta是" readonly="{{ true }}" />
+
+    <van-field value="{{ riderInfo.episode }}" label="集数" bind:change="changeEpisode"/>
+    <van-field value="{{ riderInfo.platform }}" label="播出平台" bind:change="changePlatform" />
+    <van-field value="{{ riderInfo.platform_link }}" label="播出地址"  bind:change="changePlatformLink"/>
+
+    <van-field value="{{ riderInfo.content }}" label="内容介绍" type="textarea" autosize bind:change="changeContent" />
+
+  </van-cell-group>
+
+
+
+  <van-button wx:if="{{!add}}" loading="{{isSaveLoading}}" type="primary" loading-text="保存中..." block bindtap="saveData">保存</van-button>
+  <van-button wx:if="{{add}}" loading="{{isSaveLoading}}" type="primary" loading-text="保存中..." block bindtap="saveInfoData">保存</van-button>
+  
+  <view class="ad">
+    <ad unit-id="adunit-e9f016eb717a8391" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"></ad>
+  </view>
+
+</view>

@@ -9,34 +9,42 @@ Page({
    * 页面的初始数据
    */
   data: {
-    contents:{},
-    isLoading:true
+    contents: {},
+    riderid: '',
+    isLoading: true
   },
-
+  adLoad() {
+    console.log('Grid 广告加载成功')
+  },
+  adError(err) {
+    console.log('Grid 广告加载失败', err)
+  },
+  adClose() {
+    console.log('Grid 广告关闭')
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     // console.log("info riderid ==> ",options.riderid);
-    request({
-      url: `${base_url}/getInfo?id=${options.riderid}`,
-      "content-type": "application/json"
-    }).then(res => {
-      // console.log("classification == >", res.data);
-      if (res.data.err === 0) {
-        this.setData({
-          contents:res.data.data,
-          isLoading:false
-        })
-      } else {
-        wx.showToast({
-          title: res.data.msg,
-          icon:'none',
-        })
-      }
+
+    this.setData({
+      riderid: options.riderid,
     })
   },
 
+  // 编辑 内容 需要 去掉 10 py币
+  toChangePage() {
+    console.log(" 内容 == > ", this.data.contents);
+
+    // 将 内容 保存到 storage
+
+    wx.setStorageSync('nowChangeInfo', this.data.contents)
+
+    wx.navigateTo({
+      url: `/pages/riderChange/riderChange?riderid=${this.data.riderid}`,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -51,7 +59,26 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      isLoading: true
+    })
+    request({
+      url: `${base_url}/getInfo?id=${this.data.riderid}`,
+      "content-type": "application/json"
+    }).then(res => {
+      // console.log("classification == >", res.data);
+      if (res.data.err === 0) {
+        this.setData({
+          contents: res.data.data,
+          isLoading: false
+        })
+      } else {
+        wx.showToast({
+          title: res.data.msg,
+          icon: 'none',
+        })
+      }
+    })
   },
 
   /**

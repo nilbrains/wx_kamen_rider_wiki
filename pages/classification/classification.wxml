@@ -9,7 +9,7 @@
 			<view class="rider-content tab-content-{{index}}">
 				<block wx:for="{{contents[index]}}" wx:for-item="it" wx:key="index">
 
-					<view class="rider" bindtap="toRiderInfoPage" data-riderId="{{it.rider_id}}" data-haveinfo="{{it.haveInfo}}">
+					<view class="rider" bindtap="toRiderInfoPage" data-riderId="{{it.rider_id}}" data-name="{{it.name}}">
 						<van-image round custom-class="rider-logo" src="{{it.pic}}" fit="contain" lazy-load use-loading-slot
 							use-error-slot>
 							<van-loading slot="loading" type="spinner" size="20" vertical />

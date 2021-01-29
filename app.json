@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/start/start",
     "pages/classification/classification",
     "pages/personal/personal",
-    "pages/riderInfo/riderInfo"
+    "pages/riderInfo/riderInfo",
+    "pages/riderChange/riderChange"
   ],
   "window": {
     "backgroundTextStyle": "light",
