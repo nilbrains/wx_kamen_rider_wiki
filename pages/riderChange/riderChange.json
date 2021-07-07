@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "van-field":"/components/vant/field/index",
-    "van-cell-group":"/components/vant/cell-group/index",
-    "van-button":"/components/vant/button/index"
-  }
-}
