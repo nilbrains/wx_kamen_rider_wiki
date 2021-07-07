@@ -1,0 +1,85 @@
+page {
+  height: 100%;
+}
+
+.container {
+  padding: 1rem;
+  display: block;
+}
+
+.user_box {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.user_box .head {
+  width: 4em;
+  height: 4em;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.user_box .mate {
+  height: 4em;
+  padding-top: .5rem;
+  padding-left: 1rem;
+}
+
+.user_box .mate .name {
+  font-size: 1.5rem;
+}
+
+.user_box .mate .yisay {
+  color: #7f7f7f;
+}
+
+.cell .box_item_group {
+  margin-bottom: 2rem;
+  border-radius: .5rem;
+}
+
+.cell .box_item_group .box_item {
+  box-shadow: 4px 4px 10px 0px #ccc;
+  border-radius: .5rem;
+  margin-bottom: .5rem;
+}
+
+.options {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 2rem;
+}
+
+.options .option {
+  background-color: #fff;
+  box-shadow: 4px 4px 10px 0px #ccc;
+  margin: 0 1rem;
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: content-box;
+  border: none;
+}
+
+.options .option .pic {
+  border-radius: 50%;
+  text-align: center;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.options .option .pic.share {
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+
+.options .option .pic.sign {
+  background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+}
+
+.options .option .pic.sginon {background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+}

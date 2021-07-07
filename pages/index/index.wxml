@@ -1,0 +1,24 @@
+<view class="loading" wx:if="{{isLoading}}">
+	<image class="loading__icon" src="/assets/icon/loading.gif"></image>
+</view>
+<view class="container">
+  <view class="box">
+
+    <view class="new_img_box">
+      <van-image width="10em" height="15em" fit="cover" lazy-load
+        src="{{nowRider.pic}}" />
+    </view>
+
+    <view class="info_box">
+    
+      <view class="info_text info_text_one">{{nowRider.rider_rname}}</view>
+      <view class="info_text info_text_one o">{{nowRider.rider_name}}</view>
+      <view class="info_text">第{{nowRider.episode}}集</view>
+
+    </view>
+    
+    <view class="ad">
+      <ad-custom unit-id="adunit-66dea7553a7b30c8"  bindload="adLoad" binderror="adError" ></ad-custom>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,58 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/drama/drama",
+    "pages/user/user",
+    "pages/callback/callback",
+    "pages/about/about",
+    "pages/riderinfo/riderinfo"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#f7f7f7",
+    "navigationBarTitleText": "假面骑士wiki",
+    "navigationBarTextStyle":"black",
+    "backgroundColor": "#f7f7f7"
+  },
+  "tabBar": {
+    "selectedColor": "#1296db",
+    "list": [
+      {
+        "pagePath":"pages/drama/drama",
+        "text": "全部",
+        "iconPath": "/assets/icon/drama_d.png",
+        "selectedIconPath": "/assets/icon/drama_p.png"
+      },
+      {
+        "pagePath":"pages/index/index",
+        "text": "今日",
+        "iconPath": "/assets/icon/home_d.png",
+        "selectedIconPath": "/assets/icon/home_p.png"
+      },
+      {
+        "pagePath":"pages/user/user",
+        "text": "我的",
+        "iconPath": "/assets/icon/user_d.png",
+        "selectedIconPath": "/assets/icon/user_p.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-empty": "@vant/weapp/empty/index"
+  },
+  "plugins": {
+    "chatbot": {
+      "version": "1.2.22",
+      "provider": "wx8c631f7e9f2465e1"
+    },
+    "WechatSI": {
+      "version": "0.3.4",
+      "provider": "wx069ba97219f66d99"
+    }
+  },
+  "requiredBackgroundModes": [
+    "audio"
+  ]
+}

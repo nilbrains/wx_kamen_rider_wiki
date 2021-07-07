@@ -1,0 +1,51 @@
+/* pages/riderInfo/riderInfo.wxss */
+.info-header{
+  height: 375rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info-header .info-header-cover{
+  top: 0;
+  position: absolute;
+  /* z-index: -1; */
+  clip:rect(0px 100vw 50vw 0px)
+}
+.info-header .meta {
+  z-index: 2;
+}
+.info-header .meta .name{
+  font-size: 60rpx;
+  color: #fff;
+  font-weight: 700;
+}
+
+
+.box {
+  padding: 10px;
+}
+
+.box .box-content{
+  text-indent: 2rem;
+}
+
+.table{
+  display: flex;
+  flex-direction: column;
+  padding: .5rem;
+}
+.table .table-row{
+  display: flex;
+  justify-content:space-around;
+}
+.table .table-row text{
+  display: block;
+  width: 100%;
+  padding: 10px;
+}
+.table .table-row .table-row-title{
+  font-weight: 800;
+  flex: 0 1 33%;
+  border-left: #209cdd 2px solid;
+  padding-left: .5rem;
+}

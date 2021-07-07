@@ -1,0 +1,29 @@
+.box {
+  margin: 1rem;
+  box-shadow: 4px 4px 20px 0px #ccc;
+  border-radius: .5rem;
+  height: 94vh;
+}
+.new_img_box{
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.info_box {
+  text-align: center;
+}
+.info_box .info_text {
+  padding: .5rem;
+}
+.info_box .info_text_one {
+  font-size: 1.5rem;
+}
+.info_box .info_text_one.o{
+  font-size: 1.3rem;
+  color: rgb(99, 98, 98);
+}
+.ad {
+  opacity: 0.5;
+  display: flex;
+  justify-content: center;
+}

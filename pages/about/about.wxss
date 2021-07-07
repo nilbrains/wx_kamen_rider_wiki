@@ -1,0 +1,44 @@
+/* pages/about/about.wxss */
+page {
+  height: 100%;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+.logo{
+  margin-bottom: 1em;
+}
+.title {
+  font-size: 1.5rem;
+}
+.version {
+  color: gray;
+  margin-bottom: 2rem;
+}
+
+.cell .box_item_group {
+  margin-bottom: 2rem;
+  border-radius: .5rem;
+}
+
+.cell .box_item_group .box_item {
+  box-shadow: 4px 4px 10px 0px #ccc;
+  border-radius: .5rem;
+  margin-bottom: .5rem;
+}
+
+
+.copyright {
+  font-size: 20rpx;
+  color: #999;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30rpx;
+  text-align: center;
+}
