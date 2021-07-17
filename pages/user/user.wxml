@@ -14,18 +14,20 @@
       </view>
     </view>
   </view>
-
   <view class="options">
     <view class="option">
-      <van-button round type="info" icon="/assets/icon/share.png" open-type="share" color="linear-gradient(120deg, #f6d365 0%, #fda085 100%)" >
+      <van-button round type="info" icon="/assets/icon/share.png" open-type="share"
+        color="linear-gradient(120deg, #f6d365 0%, #fda085 100%)">
       </van-button>
     </view>
     <view class="option">
-      <van-button round type="info" icon="/assets/icon/sign.png" bind:click="toSginIn" color="{{!isSginIn?'linear-gradient(120deg, #a6c0fe 0%, #f68084 100%)':'linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%)'}}" >
+      <van-button round type="info" icon="/assets/icon/sign.png" bind:click="toSginIn"
+        color="{{!isSginIn?'linear-gradient(120deg, #a6c0fe 0%, #f68084 100%)':'linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%)'}}">
       </van-button>
     </view>
     <view class="option">
-      <van-button round type="info" icon="/assets/icon/ad.png" bind:click="showad" color="linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);" >
+      <van-button round type="info" icon="/assets/icon/ad.png" bind:click="showad"
+        color="linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);">
       </van-button>
     </view>
   </view>
@@ -34,7 +36,13 @@
   <view class="cell">
 
     <van-cell-group custom-class="box_item_group">
-      <van-cell custom-class="box_item" title="签到" value="{{!isSginIn?'今日签到':'已签到'+days+'天'}}" bind:click="toSginIn" is-link />
+
+      <van-cell wx:if="{{notice != ''}}" custom-class="box_item">
+        <van-notice-bar color="#111" left-icon="volume-o" background="#ffffff" text="{{notice}}" />
+      </van-cell>
+
+      <van-cell custom-class="box_item" title="签到" value="{{!isSginIn?'今日签到':'已签到'+days+'天'}}" bind:click="toSginIn"
+        is-link />
       <van-cell custom-class="box_item" title="PY币" value="{{pyb || 0}}" is-link />
     </van-cell-group>
 

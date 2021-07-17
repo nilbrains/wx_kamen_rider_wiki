@@ -12,8 +12,12 @@
         <ad unit-id="adunit-fb6699e20d50d280"></ad>
       </view>
     <van-cell-group wx:if="{{riders.length != 0}}">
-      <van-cell custom-class="box_item" wx:for="{{riders}}" wx:key="index" title="{{item.name}}" value="{{item.years}}"
-        is-link bind:click="showPanel" data-id="{{item.id}}" />
+      <van-cell custom-class="box_item" title-class="title_cless" wx:for="{{riders}}" wx:key="index" title="{{item.name}}" value="{{item.years}}"
+        is-link bind:click="showPanel" data-id="{{item.id}}">
+        <view slot="icon" class="rider-icon__box">
+            <image src="{{item.emb}}" class="rider-icon"/>
+        </view>
+        </van-cell>
     </van-cell-group>
     <van-empty wx:else image="search" description="骑士消失了" />
   </view>

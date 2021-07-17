@@ -1,7 +1,7 @@
 <view class="loading" wx:if="{{isLoading}}">
 	<image class="loading__icon" src="/assets/icon/loading.gif"></image>
 </view>
-<view class="container">
+<view class="container">  
   <view class="box">
 
     <view class="new_img_box">
@@ -14,6 +14,7 @@
       <view class="info_text info_text_one">{{nowRider.rider_rname}}</view>
       <view class="info_text info_text_one o">{{nowRider.rider_name}}</view>
       <view class="info_text">第{{nowRider.episode}}集</view>
+      <view class="info_text tovqq" bindtap="tovqq" data-vid="{{nowRider.platform}}">点我马上观看</view>
 
     </view>
     

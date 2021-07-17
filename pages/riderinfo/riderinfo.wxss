@@ -1,20 +1,23 @@
 /* pages/riderInfo/riderInfo.wxss */
-.info-header{
+.info-header {
   height: 375rpx;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.info-header .info-header-cover{
+
+.info-header .info-header-cover {
   top: 0;
   position: absolute;
   /* z-index: -1; */
-  clip:rect(0px 100vw 50vw 0px)
+  clip: rect(0px 100vw 50vw 0px)
 }
+
 .info-header .meta {
   z-index: 2;
 }
-.info-header .meta .name{
+
+.info-header .meta .name {
   font-size: 60rpx;
   color: #fff;
   font-weight: 700;
@@ -25,27 +28,47 @@
   padding: 10px;
 }
 
-.box .box-content{
+.box .box-content {
   text-indent: 2rem;
 }
 
-.table{
+.table {
   display: flex;
   flex-direction: column;
   padding: .5rem;
 }
-.table .table-row{
+
+.table .table-row {
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
 }
-.table .table-row text{
+
+.table .table-row text {
   display: block;
   width: 100%;
   padding: 10px;
 }
-.table .table-row .table-row-title{
+
+.table .table-row .table-row-title {
   font-weight: 800;
   flex: 0 1 33%;
   border-left: #209cdd 2px solid;
   padding-left: .5rem;
+}
+
+
+.plays_box {
+  margin: 11px 16px 0;
+}
+
+.play_item {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  width: 15%;
+  margin: 9px 4px 9px 0;
+  height: 28px;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 4px 4px 10px 0px #ccc;
 }

@@ -38,4 +38,12 @@
   height:194px;
 }
 
-
+.tovqq {
+  background-image: linear-gradient(to right, #f10a25 0%, #0848cf 100%);
+  color: #f7f7f7;
+  font-weight: bold;
+  width: 200px;
+  margin: 0 auto;
+  border-radius: 20px;
+  text-align: center;
+}

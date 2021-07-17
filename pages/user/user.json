@@ -3,6 +3,7 @@
     "van-cell": "@vant/weapp/cell/index",
     "van-cell-group": "@vant/weapp/cell-group/index",
     "van-icon": "@vant/weapp/icon/index",
-    "van-notify": "@vant/weapp/notify/index"
+    "van-notify": "@vant/weapp/notify/index",
+    "van-notice-bar": "@vant/weapp/notice-bar/index"
   }
 }

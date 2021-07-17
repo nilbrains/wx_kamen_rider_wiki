@@ -1,9 +1,8 @@
 // app.js
-import { request,base_url } from "./utils/api";
+import { request,base_url, base_url_json } from "./utils/api";
 var plugin = requirePlugin("chatbot");
 App({
   onLaunch() {
-    let that = this;
     // 登录
     wx.login({
       success: res => {
@@ -11,7 +10,7 @@ App({
         .then(res=>{
           console.log(res);
           if (res.err == 0) {
-            that.globalData.userData = res.data;
+            this.globalData.userData = res.data;
             plugin.init({
               appid: "yA06BiQTyC06r4Ccl4JlcsKrfGeEHe", 
               openid: res.data.openid,
@@ -50,11 +49,17 @@ App({
       }
     })
 
-    
+    request({
+      url: `${base_url_json}/json/now.json?t=${new Date().getTime()}`
+    })
+    .then(res => {
+      this.globalData.config = res
+    })
 
   },
   globalData: {
     userInfo: null,
-    userData:{}
+    userData:{},
+    config: {}
   }
 })

@@ -12,7 +12,6 @@ Page({
    */
   data: {
     isLoading: false,
-    version: "V1.2.3",
     isSginIn: false,
     pyb: 0,
     days: 0,
@@ -27,9 +26,10 @@ Page({
     console.log(flag, app.globalData.userData);
 
     this.setData({
-      pyb: app.globalData.userData.pyb,
-      days: app.globalData.userData.days,
+      pyb: app.globalData.userData.pyb || 0,
+      days: app.globalData.userData.days || 0,
       isSginIn: flag,
+      notice: app.globalData.config.notice || ""
     });
     
     // 在页面onLoad回调事件中创建激励视频广告实例
@@ -103,12 +103,6 @@ Page({
    */
   onReady: function () {},
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
   callback() {
     wx.navigateTo({
       url: "/pages/callback/callback",

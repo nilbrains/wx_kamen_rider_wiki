@@ -55,9 +55,6 @@ Page({
           content: '非常抱歉暂时没有相关内容'
         })
       }
-      this.setData({
-        showPanelFlag: false
-      })
     })
   },
   initData(){
