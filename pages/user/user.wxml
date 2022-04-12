@@ -1,0 +1,58 @@
+<view class="container">
+
+  <van-notify id="van-notify" />
+  <view class="user_box">
+    <view class="head">
+      <open-data wx:if="{{!userIsBind}}" class="van-image__img" type="userAvatarUrl"></open-data>
+      <van-image wx:if="{{userIsBind}}" width="64" height="64" lazy-load src="{{ userInfo.head }}" />
+    </view>
+    <view class="mate">
+      <view class="name">
+        <open-data wx:if="{{!userIsBind}}" class="nickname" type="userNickName"></open-data>
+        <view wx:if="{{userIsBind}}" class="nickname"> {{ userInfo.name }} </view>
+      </view>
+      <view class="yisay">
+        {{userInfo.sign}}
+      </view>
+    </view>
+  </view>
+
+
+  <view class="cell">
+
+    <van-cell-group custom-class="box_item_group">
+
+      <van-cell wx:if="{{notice != ''}}" custom-class="box_item">
+        <van-notice-bar color="#111" left-icon="volume-o" background="#ffffff" text="{{notice}}" />
+      </van-cell>
+
+      <van-cell custom-class="box_item" title="账号" value="{{ userIsBind ? userInfo.uid : '未绑定账号' }}" bind:click="toBindIn" is-link />
+      <!-- <van-cell custom-class="box_item" title="积分" value="{{userInfo.integral || 0}}" is-link /> -->
+      <van-cell custom-class="box_item" wx:if="{{userIsBind}}" title="授权码" value="{{ userIsBind ? '点击获取' : '未绑定账号' }}" url="/pages/user/code/code" is-link />
+  
+
+    </van-cell-group>
+
+    <van-cell-group custom-class="box_item_group">
+      <button open-type="contact" class="link_button">
+        <van-cell custom-class="box_item" title="联系小沐" is-link />
+      </button>
+      <navigator target="miniProgram" open-type="navigate" app-id="{{ appId }}" extra-data="{{ extraData }}" version="release">
+        <van-cell custom-class="box_item" title="提交反馈" is-link />
+      </navigator>
+      <van-cell custom-class="box_item" title="清理缓存" is-link bind:click="cleardisk" />
+      <van-cell custom-class="box_item" title="关于我们" is-link bind:click="aboutus" />
+
+    </van-cell-group>
+
+    <view class="ad">
+      <ad unit-id="adunit-fb6699e20d50d280"></ad>
+    </view>
+
+  </view>
+
+
+
+
+
+</view>

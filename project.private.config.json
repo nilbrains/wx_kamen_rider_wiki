@@ -1,0 +1,82 @@
+{
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "pages/user/user",
+                    "pathName": "pages/user/user",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/user/bind/bind",
+                    "pathName": "pages/user/bind/bind",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/user/info/info",
+                    "pathName": "pages/user/info/info",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/drama/drama",
+                    "pathName": "pages/drama/drama",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/drama/info/info",
+                    "pathName": "pages/drama/info/info",
+                    "query": "id=1",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/about/about",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/user/code/code",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/drama/ep/ep",
+                    "query": "id=1472199859835445249",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/user/reg/reg",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/subject/subject",
+                    "query": "",
+                    "scene": null,
+                    "partialCompile": {
+                        "enabled": true,
+                        "pages": []
+                    }
+                }
+            ]
+        }
+    }
+}

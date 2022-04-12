@@ -1,0 +1,35 @@
+<view class="container">
+  <van-toast id="van-toast" />
+
+  <view class="login-title-box">
+    <view class="header">Nil Auth</view>
+    <view class="sub-header"> 欢迎使用 </view>
+  </view>
+
+  <view class="login-box">
+
+    <view class="login-item">
+      <input class="login-input" disabled="{{userIsBind}}" placeholder="邮箱" bindinput="bindEmail" />
+    </view>
+
+    <view class="login-item">
+      <view wx:if="{{userIsBind}}"> 账号已绑定 </view>
+      <input wx:if="{{!userIsBind}}" class="login-input" password type="text" placeholder="密码"
+        bindinput="bindPassword" />
+    </view>
+
+    <view class="login-item" >
+      没有账号？<text class="login-link" bindtap="changeBindType">去注册</text>
+    </view>
+
+  </view>
+
+  <view class="login-btn">
+    <van-button wx:if="{{!userIsBind}}" type="primary" block bind:click="bindingAccount">绑定账号</van-button>
+
+    <view class="hint">
+
+    </view>
+  </view>
+
+</view>

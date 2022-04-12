@@ -1,0 +1,45 @@
+<view class="container">
+
+  <view class="info-header">
+    <image src="{{riderInfo.riderPic?riderInfo.riderPic:'/assets/images/bg.jpg'}}" class="info-header-cover" mode="top"></image>
+    <view class="meta">
+      <text class="name">{{riderInfo.riderNameCn || riderInfo.riderName}}</text>
+    </view>
+  </view>
+
+  <view class="info-box">
+    <van-cell title="{{riderInfo.riderName}}" value="{{formatRiderType[riderInfo.riderType -1]}}" title-style="flex:3;" />
+    <van-collapse accordion value="{{ showRiderIntro }}" bind:change="onChangeShowRiderIntro">
+      <van-collapse-item title="剧情介绍" name="1">
+        {{riderInfo.riderIntro || ''}}
+      </van-collapse-item>
+    </van-collapse>
+
+    <van-cell-group>
+      <van-cell title="播出年份" value="{{riderInfo.playYear || '未知'}}" />
+    </van-cell-group>
+  </view>
+
+  <view class="playslist">
+    <view class="ad" >
+        <ad unit-id="adunit-0296352148fd54c9"></ad>
+      </view>
+    <view class="play-item" wx:for="{{eps}}" wx:key="index">
+
+      <view wx:if="{{!item.showAd}}" bindtap="itemClick" data-item="{{item}}" data-vid="{{item.playUrl}}" style="position: relative;">
+        <van-image src="{{item.pic||'/assets/images/temp.png'}}" fit="widthFix" width="100%" lazy-load radius="10px" use-error-slot>
+          <text slot="error">加载失败</text>
+        </van-image>
+        <view class="title"> {{item.titleCn ||  item.title}} </view>
+        <view class="crdeit"> {{item.crdeit}} </view>
+        <view class="desc">
+          <view class="num"> 第 {{item.episode}} 话 </view>
+          <view class="time"> {{item.time}} </view>
+        </view>
+      </view>
+
+
+    </view>
+  </view>
+
+</view>

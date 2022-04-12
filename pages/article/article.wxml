@@ -1,0 +1,13 @@
+<!--pages/article.wxml-->
+<view class="container">
+    <view class="title">{{data.title}}</view>
+    <view class="content">
+        <towxml nodes="{{article}}" />
+    </view>
+    <view class="time">更新时间:  {{data.updateTime}}</view>
+
+    <view class="ad">
+      <ad-custom unit-id="adunit-038050c399f82bcd"></ad-custom>
+    </view>
+
+</view>

@@ -1,0 +1,16 @@
+/* pages/user/info/info.wxss */
+.container {
+  height: 100%;
+}
+
+.head {
+  display: flex;
+  padding: 2em 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.ad {
+  /* opacity: 50%; */
+  background-color: #ffffff;
+}

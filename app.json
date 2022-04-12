@@ -1,0 +1,40 @@
+{
+    "pages": [
+        "pages/drama/drama",
+        "pages/drama/info/info",
+        "pages/drama/ep/ep",
+        "pages/user/user",
+        "pages/user/info/info",
+        "pages/user/code/code",
+        "pages/user/bind/bind",
+        "pages/user/reg/reg",
+        "pages/about/about",
+        "pages/article/article"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#f7f7f7",
+        "navigationBarTitleText": "假面骑士wiki",
+        "navigationBarTextStyle": "black",
+        "backgroundColor": "#f7f7f7"
+    },
+    "tabBar": {
+        "selectedColor": "#1296db",
+        "list": [
+            {
+                "pagePath": "pages/drama/drama",
+                "text": "全部",
+                "iconPath": "/assets/icon/drama_d.png",
+                "selectedIconPath": "/assets/icon/drama_p.png"
+            },
+            {
+                "pagePath": "pages/user/user",
+                "text": "我的",
+                "iconPath": "/assets/icon/user_d.png",
+                "selectedIconPath": "/assets/icon/user_p.png"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json",
+    "lazyCodeLoading": "requiredComponents"
+}

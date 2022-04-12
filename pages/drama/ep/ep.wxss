@@ -1,0 +1,110 @@
+/* pages/drama/ep/ep.wxss */
+.container {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.info-header {
+  height: 430rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.info-header .info-header-cover {
+  width: 100%;
+  height: 430rpx;
+  /* clip: rect(0px 100vw 50vw 0px) */
+}
+
+.info-header .meta {
+  /* z-index: 2; */
+  position: absolute;
+  background-color: rgba(0, 0, 0, .5);
+  box-sizing: border-box;
+  padding: 1em 2em;
+  border-radius: 10px;
+}
+
+.info-header .meta .name {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.flex3 {
+  flex: 3 !important;
+}
+
+
+
+.fb {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+.comment-box {
+  display: flex;
+  flex-direction: column;
+  height: 260px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.comment-box .input{
+  flex: 1;
+}
+
+
+
+.info-box {
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.comments .comment-item{
+  background-color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.comments .comment-item:last-of-type {
+  margin-bottom: 50px;
+}
+
+.comments .comment-item .userinfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 800;
+}
+
+.comments .comment-item .userinfo .l{
+  display: flex;
+  align-items: center;
+}
+
+.comments .comment-item .userinfo .time {
+  font-size: 10px;
+  margin-left: 10px;
+  font-weight: normal;
+}
+
+.comments .comment-item .userinfo image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.comments .comment-item .content {
+  padding: 5px;
+}

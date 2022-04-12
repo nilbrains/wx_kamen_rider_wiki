@@ -1,0 +1,99 @@
+.container {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.info-header {
+  height: 375rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.info-header .info-header-cover {
+  width: 100%;
+  height: 375rpx;
+  clip: rect(0px 100vw 50vw 0px)
+}
+
+.info-header .meta {
+  /* z-index: 2; */
+  position: absolute;
+  background-color: rgba(0, 0, 0, .5);
+  padding: 1em 2em;
+  border-radius: 10px;
+}
+
+.info-header .meta .name {
+  font-size: 60rpx;
+  color: #fff;
+  font-weight: 700;
+}
+
+.info-box {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+.playslist {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.playslist .play-item {
+  flex-basis: 45%;
+  flex-grow: 1;
+  padding: 0.3em;
+}
+
+.playslist .play-item .title {
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.titleImg {
+  position: absolute;
+  top: 46px;
+  background: rgba(0,0,0,.4);
+  width: 100%;
+  height: 43px;
+  color: #fff;
+  font-size: .1rem;
+  text-align: center;
+  padding: 4px 5px;
+  box-sizing: border-box;
+}
+
+.playslist .play-item .desc {
+  display: flex;
+  justify-content: space-between;
+}
+
+.playslist .play-item .desc .num {
+  color: rgb(97, 97, 97);
+  font-weight: normal;
+  font-size: 10px;
+}
+
+.playslist .play-item .desc .time {
+  color: rgb(97, 97, 97);
+  font-weight: normal;
+  font-size: 10px;
+}
+
+.playslist .ad {
+  /* flex: 1; */
+  padding: 0.3em;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.playslist .ad ad{
+  width: 100% !important;
+}

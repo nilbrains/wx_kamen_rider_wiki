@@ -1,0 +1,47 @@
+/* pages/user/code/code.wxss */
+.container {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.codes {
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    background-color: #f2f2f2;
+    justify-content: center;
+}
+
+.codes .code{
+    font-size: 30px;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #fff;
+    margin-right: 10px;
+}
+
+.codes .code:last-of-type {
+    margin-right: 0;
+}
+
+.message {
+    padding: 10px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.options {
+    height: 30vh;
+    width: 50%;
+    display: flex;
+        justify-content: center;
+        /* align-items: center; */
+        flex-direction: column;
+}
+
+.botton_o {
+    /* width: 80%; */
+    margin-bottom: 20px;
+}

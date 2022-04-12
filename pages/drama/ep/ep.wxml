@@ -1,0 +1,47 @@
+<wxs module="com" src="../../../utils/common.wxs"></wxs>
+<view class="container">
+
+    <view class="info-header" bindtap="showBigImage">
+        <image src="{{ep.pic?ep.pic:'/assets/images/bg.jpg'}}" class="info-header-cover" mode="scaleToFill"></image>
+        <view class="meta">
+            <text class="name">{{ep.titleCn || ep.title}}</text>
+        </view>
+    </view>
+
+    <view class="info-box">
+        <van-cell-group>
+            <van-cell value-class="flex3" title="名" value="{{ep.title || '未知'}}" />
+            <van-cell value-class="flex3" title="译" value="{{ep.titleCn || '未翻译'}}" />
+            <van-cell value-class="flex3" title="集数" value="{{ep.episode || '未知'}}" />
+            <van-cell value-class="flex3" title="播出时间" value="{{ep.time || '未知'}}" />
+            <van-cell value-class="flex3" title="脚本" value="{{ep.credit || '未知'}}" />
+            <van-cell wx:if="{{ep.playUrl}}" value-class="flex3" title="去播放" is-link bind:click="gotoplay"/>
+        </van-cell-group>
+    </view>
+
+    <view class="comments">
+        <view class="comment-item" wx:for="{{ comments }}" wx:key="index">
+            <view class="userinfo">
+                <view class="l">
+                    <image src="{{item.avatar}}"></image>
+                    <view class="name">{{item.nickname}}</view>
+                </view>
+                <view class="time">{{com.formatTime(item.createTime)}}</view>
+            </view>
+            <view class="content">{{item.content}}</view>
+        </view>
+    </view>
+
+    <view class="fb">
+        <van-icon wx:if="{{!showComment}}" name="add" bindtap="showCommentBox" color="#4d90fe" size="40px" />
+    </view>
+
+    <van-popup show="{{ showComment }}" round position="bottom" custom-style="height: 260px" bind:close="hideCommentBox">
+        <view class="comment-box">
+            <view class="input">
+                <van-field value="{{ message }}" type="textarea" placeholder="请输入留言" autosize="{{autosize}}" border="{{ false }}" maxlength="60" show-word-limit="{{true}}" bind:change="onCommentChange" />
+            </view>
+            <van-button type="primary" block round bind:click="submitComment">发表</van-button>
+        </view>
+    </van-popup>
+</view>

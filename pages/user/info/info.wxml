@@ -1,0 +1,27 @@
+<view class="container">
+
+  <view class="head">
+    <van-image round width="100px" height="100px" src="{{userinfo.head}}" bind:click="changeHead" />
+  </view>
+
+  <van-cell-group inset>
+    <van-cell title="邮箱" value="{{userinfo.email}}" />
+    <van-cell title="昵称" value="{{userinfo.name}}" is-link bind:click="changeUserName" />
+    <van-cell title="账号" value="{{userinfo.uid}}" />
+    <!-- <van-cell title="积分" value="{{userinfo.integral}}" /> -->
+    <!-- <van-cell title="会员" value="{{userinfo.isVip == '1' ? 'VIP' : '普通用户'}}" /> -->
+
+    <view class="ad">
+      <ad-custom unit-id="adunit-038050c399f82bcd"></ad-custom>
+    </view>
+
+  </van-cell-group>
+
+
+
+
+  <van-dialog use-slot title="修改昵称" show="{{ show }}" show-cancel-button bind:close="onClose" bind:confirm="onOK">
+    <van-field value="{{ changeUserNameData }}" placeholder="请输入昵称" border="{{ false }}" bind:change="changeUserNameDataChange" />
+  </van-dialog>
+  <van-dialog id="van-dialog" />
+</view>

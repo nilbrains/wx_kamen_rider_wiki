@@ -1,0 +1,28 @@
+/**app.wxss**/
+page {
+  height: 100%;
+}
+.container {
+  min-height: 100%;
+  background-color: #f7f7f7;
+} 
+
+.text-main-color{
+  color: #1296db;
+}
+
+/* 加载中 */
+.loading {
+  width:100vw;
+  height:90vh;
+  position: absolute;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading__icon {
+  width:142px;
+  height:194px;
+}

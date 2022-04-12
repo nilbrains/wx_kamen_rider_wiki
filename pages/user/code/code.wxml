@@ -1,0 +1,20 @@
+<view class="container">
+
+<view class="codes">
+    <view class="code" wx:key="index" wx:for="{{codes}}"> {{item}}</view>
+</view>
+<view class="message">
+{{message}}
+</view>
+
+<view class="options">
+    
+    <van-button class="botton_o" block loading="{{loading}}" type="info" loading-text="获取中..." bind:click="getCode">
+        点击获取
+    </van-button>
+    <van-button class="botton_o" block   type="default" bind:click="cancel" > 取消 </van-button>
+
+</view>
+
+
+</view>

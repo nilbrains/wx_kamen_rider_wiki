@@ -1,0 +1,34 @@
+<view class="loading" wx:if="{{isLoading}}">
+  <image class="loading__icon" src="/assets/icon/loading.gif"></image>
+</view>
+<view class="container">
+
+  <swiper class="banner" indicator-dots="true" indicator-color="0,0,0,0.8" indicator-active-color="white" autoplay="true" interval="2500" circular="true">
+    <swiper-item wx:for="{{swipe}}" wx:key="index" bindtap="topage" data-path="{{item.page}}">
+      <image src='{{item.pic}}' mode='aspectFill'></image>
+    </swiper-item>
+  </swiper>
+
+  <view class="coming">
+    <view class="coming-item" wx:for="{{newEp}}" wx:key="index"  bindtap="itemClick" data-item="{{item}}">
+      <image src='{{item.pic}}' mode='aspectFill'></image>
+
+      <view class="tag coming-tag" wx:if="{{index == 0}}">预告</view>
+      <view class="tag" wx:if="{{index == 1}}">播出</view>
+
+      <view class="title">{{ item.titleCn || item.title}}</view>
+    </view>
+  </view>
+
+  <view class="rider-list">
+    <block wx:for="{{riders}}" wx:key="index">
+      <view class="rider-item" bindtap="toRiderInfoPage" data-id="{{item.id}}">
+        <image src="{{item.riderHead}}" lazy-load></image>
+        <view class="name"> {{ item.riderNameCn || item.riderName }} </view>
+      </view>
+      <view class="ad" wx:if="{{(index+1) % 15 == 0}}">
+        <ad-custom class="addd" unit-id="adunit-66dea7553a7b30c8"></ad-custom>
+      </view>
+    </block>
+  </view>
+</view>

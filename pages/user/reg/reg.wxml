@@ -1,0 +1,40 @@
+<view class="container">
+  <van-toast id="van-toast" />
+
+  <view class="login-title-box">
+    <view class="header">Nil Auth</view>
+    <view class="sub-header"> 欢迎注册 </view>
+  </view>
+
+  <view class="login-box">
+
+    <view class="login-item">
+      <input class="login-input" placeholder="邮箱" bindinput="bindEmail" />
+    </view>
+
+    <view class="login-item code">
+      <input class="login-input" placeholder="验证码" bindinput="bindEmailCode" />
+      <van-button class="sendbtn" disabled="{{sendDisable}}" type="primary" size="small" bindtap="sendCode">{{snedStr}}</van-button>
+    </view>
+
+    <view class="login-item">
+      <input class="login-input" password type="text" placeholder="密码"
+        bindinput="bindPassword" />
+    </view>
+
+    <view class="login-item">
+      <input class="login-input" password type="text" placeholder="确认密码"
+        bindinput="bindRePassword" />
+    </view>
+
+  </view>
+
+  <view class="login-btn">
+    <van-button type="primary" block bind:click="createAccount">马上注册</van-button>
+
+    <view class="hint">
+
+    </view>
+  </view>
+
+</view>
